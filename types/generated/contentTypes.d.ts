@@ -683,6 +683,7 @@ export interface ApiBookBook extends Schema.CollectionType {
     singularName: 'book';
     pluralName: 'books';
     displayName: 'Book';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -693,12 +694,23 @@ export interface ApiBookBook extends Schema.CollectionType {
     };
   };
   attributes: {
-    lesson: Attribute.Text &
+    Book_Name: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
+    Lesson: Attribute.Component<'component.html', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    class: Attribute.Relation<
+      'api::book.book',
+      'manyToOne',
+      'api::class.class'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -746,12 +758,150 @@ export interface ApiBook1Book1 extends Schema.CollectionType {
   };
 }
 
+export interface ApiBook3Book3 extends Schema.CollectionType {
+  collectionName: 'book3s';
+  info: {
+    singularName: 'book3';
+    pluralName: 'book3s';
+    displayName: 'Book3';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Lesson_name: Attribute.String;
+    html_file: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::book3.book3',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::book3.book3',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiClassClass extends Schema.CollectionType {
+  collectionName: 'classes';
+  info: {
+    singularName: 'class';
+    pluralName: 'classes';
+    displayName: 'Class';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Class_name: Attribute.String;
+    books: Attribute.Relation<
+      'api::class.class',
+      'oneToMany',
+      'api::book.book'
+    >;
+    teachers: Attribute.Relation<
+      'api::class.class',
+      'manyToMany',
+      'api::teacher.teacher'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::class.class',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::class.class',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHtmbook1Htmbook1 extends Schema.CollectionType {
+  collectionName: 'htmbook_1s';
+  info: {
+    singularName: 'htmbook-1';
+    pluralName: 'htmbook-1s';
+    displayName: 'HTMBOOK1';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    HTMLBOOK1NAME: Attribute.Component<'html.sdfd', true>;
+    BOOKNAME: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::htmbook-1.htmbook-1',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::htmbook-1.htmbook-1',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHtmlBookHtmlBook extends Schema.CollectionType {
+  collectionName: 'html_books';
+  info: {
+    singularName: 'html-book';
+    pluralName: 'html-books';
+    displayName: 'HTML book';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    dynamic_zone: Attribute.DynamicZone<
+      ['dynaiczonecategory.dynamiczonedisplayname']
+    >;
+    BOOKNAME: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::html-book.html-book',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::html-book.html-book',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSectionSection extends Schema.CollectionType {
   collectionName: 'sections';
   info: {
     singularName: 'section';
     pluralName: 'sections';
     displayName: 'Section';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -760,6 +910,12 @@ export interface ApiSectionSection extends Schema.CollectionType {
     section_name: Attribute.String;
     short_description: Attribute.Text;
     section_pic: Attribute.Media;
+    url: Attribute.String;
+    classes: Attribute.Relation<
+      'api::section.section',
+      'oneToMany',
+      'api::class.class'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -771,6 +927,77 @@ export interface ApiSectionSection extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::section.section',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSection1Section1 extends Schema.CollectionType {
+  collectionName: 'section1s';
+  info: {
+    singularName: 'section1';
+    pluralName: 'section1s';
+    displayName: 'Section1';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Pic: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::section1.section1',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::section1.section1',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTeacherTeacher extends Schema.CollectionType {
+  collectionName: 'teachers';
+  info: {
+    singularName: 'teacher';
+    pluralName: 'teachers';
+    displayName: 'Teacher';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    teacher_name: Attribute.String;
+    profile_picture: Attribute.Media;
+    emaial: Attribute.Email;
+    Telephone: Attribute.BigInteger;
+    Description: Attribute.RichText;
+    classes: Attribute.Relation<
+      'api::teacher.teacher',
+      'manyToMany',
+      'api::class.class'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::teacher.teacher',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::teacher.teacher',
       'oneToOne',
       'admin::user'
     > &
@@ -796,7 +1023,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::book.book': ApiBookBook;
       'api::book1.book1': ApiBook1Book1;
+      'api::book3.book3': ApiBook3Book3;
+      'api::class.class': ApiClassClass;
+      'api::htmbook-1.htmbook-1': ApiHtmbook1Htmbook1;
+      'api::html-book.html-book': ApiHtmlBookHtmlBook;
       'api::section.section': ApiSectionSection;
+      'api::section1.section1': ApiSection1Section1;
+      'api::teacher.teacher': ApiTeacherTeacher;
     }
   }
 }

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_html_sdfds",
+  "info": {
+    "displayName": "sdfd",
+    "icon": "bold",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "markdowm": {
+      "type": "richtext"
+    }
+  }
+}

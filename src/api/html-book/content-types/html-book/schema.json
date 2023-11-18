@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "html_books",
+  "info": {
+    "singularName": "html-book",
+    "pluralName": "html-books",
+    "displayName": "HTML book",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dynamic_zone": {
+      "type": "dynamiczone",
+      "components": [
+        "dynaiczonecategory.dynamiczonedisplayname"
+      ]
+    },
+    "BOOKNAME": {
+      "type": "string"
+    }
+  }
+}

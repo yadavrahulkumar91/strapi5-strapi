@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_dynaiczonecategory_dynamiczonedisplaynames",
+  "info": {
+    "displayName": "dynamiczonedisplayname"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "markdowm": {
+      "type": "richtext"
+    }
+  }
+}
