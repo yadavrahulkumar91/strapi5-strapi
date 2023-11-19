@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_book_question_answers",
+  "info": {
+    "displayName": "Question_answer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Question": {
+      "type": "richtext"
+    },
+    "Answer": {
+      "type": "richtext"
+    },
+    "qa_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::qa-type.qa-type"
+    }
+  }
+}

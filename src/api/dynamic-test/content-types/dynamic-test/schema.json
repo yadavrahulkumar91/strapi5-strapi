@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dynamic_tests",
+  "info": {
+    "singularName": "dynamic-test",
+    "pluralName": "dynamic-tests",
+    "displayName": "Dynamic_test",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Dynamic_test": {
+      "type": "dynamiczone",
+      "components": [
+        "dynaiczonecategory.dynamic1displayname",
+        "dynaiczonecategory.dynamiczonedisplayname",
+        "html.b-ook-html"
+      ]
+    },
+    "Book_name": {
+      "type": "string"
+    },
+    "class": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::class.class"
+    },
+    "Cover_picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

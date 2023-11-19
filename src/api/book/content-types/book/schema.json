@@ -24,7 +24,26 @@
       },
       "type": "string"
     },
-    "Lesson": {
+    "class": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::class.class",
+      "inversedBy": "books"
+    },
+    "Cover_picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Unit": {
       "type": "component",
       "repeatable": true,
       "pluginOptions": {
@@ -32,13 +51,7 @@
           "localized": true
         }
       },
-      "component": "component.html"
-    },
-    "class": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::class.class",
-      "inversedBy": "books"
+      "component": "book.unit"
     }
   }
 }

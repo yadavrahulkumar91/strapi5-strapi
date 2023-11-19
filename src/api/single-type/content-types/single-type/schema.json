@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "single_types",
+  "info": {
+    "singularName": "single-type",
+    "pluralName": "single-types",
+    "displayName": "Single_type"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.component1"
+    }
+  }
+}

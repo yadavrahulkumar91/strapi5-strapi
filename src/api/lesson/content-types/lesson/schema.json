@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lessons",
+  "info": {
+    "singularName": "lesson",
+    "pluralName": "lessons",
+    "displayName": "Book1",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Book_name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "MCQ": {
+      "type": "component",
+      "repeatable": true,
+      "component": "book.mcq"
+    },
+    "Component11": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.component1"
+    },
+    "dynamiccomponent": {
+      "type": "dynamiczone",
+      "components": [
+        "component.component1",
+        "book.mcq",
+        "dynaiczonecategory.dynamic1displayname"
+      ]
+    }
+  }
+}

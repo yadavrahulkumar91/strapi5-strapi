@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_component_mcqs",
+  "info": {
+    "displayName": "MCQ",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Question": {
+      "type": "richtext"
+    },
+    "Option_a": {
+      "type": "richtext"
+    },
+    "Option_b": {
+      "type": "richtext"
+    },
+    "Option_c": {
+      "type": "richtext"
+    },
+    "Option_d": {
+      "type": "richtext"
+    },
+    "Correct_answer": {
+      "type": "enumeration",
+      "enum": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ]
+    },
+    "Explanation": {
+      "type": "richtext"
+    },
+    "mcq_level": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::mcq-level.mcq-level"
+    }
+  }
+}

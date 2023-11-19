@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_component_again_news",
+  "info": {
+    "displayName": "Again_new"
+  },
+  "options": {},
+  "attributes": {
+    "short": {
+      "type": "string"
+    },
+    "againtitle": {
+      "type": "string"
+    }
+  }
+}

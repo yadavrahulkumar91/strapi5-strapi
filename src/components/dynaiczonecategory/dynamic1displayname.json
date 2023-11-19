@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_dynaiczonecategory_dynamic1displaynames",
+  "info": {
+    "displayName": "Dynamic1displayname",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Texttodynamic1": {
+      "type": "string"
+    },
+    "Json": {
+      "type": "json"
+    },
+    "Singlecomponent": {
+      "type": "component",
+      "repeatable": false,
+      "component": "dynaiczonecategory.dynamiczonedisplayname"
+    }
+  }
+}

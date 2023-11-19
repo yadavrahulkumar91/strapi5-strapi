@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_component_lessons",
+  "info": {
+    "displayName": "Lesson",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Lesson_name": {
+      "type": "string"
+    },
+    "Lesson_content": {
+      "type": "richtext"
+    },
+    "Question_answer": {
+      "type": "component",
+      "repeatable": true,
+      "component": "book.question-answer"
+    },
+    "MCQ": {
+      "type": "component",
+      "repeatable": true,
+      "component": "book.mcq"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_component_newcomponentincomponents",
+  "info": {
+    "displayName": "newcomponentincomponent"
+  },
+  "options": {},
+  "attributes": {
+    "Again": {
+      "displayName": "Again_new",
+      "type": "component",
+      "repeatable": true,
+      "component": "component.again-new"
+    }
+  }
+}

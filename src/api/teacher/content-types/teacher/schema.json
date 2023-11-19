@@ -12,10 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "teacher_name": {
+    "Teacher_name": {
       "type": "string"
     },
-    "profile_picture": {
+    "Profile_picture": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -23,7 +23,7 @@
         "images"
       ]
     },
-    "emaial": {
+    "Email_Address": {
       "type": "email"
     },
     "Telephone": {
