@@ -12,10 +12,23 @@
     "Answer": {
       "type": "richtext"
     },
-    "qa_type": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::qa-type.qa-type"
+    "Hardness_level": {
+      "type": "enumeration",
+      "enum": [
+        "Easier",
+        "Easy",
+        "Hard",
+        "Harder",
+        "Challenging"
+      ]
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Very short",
+        "Short",
+        "Long"
+      ]
     }
   }
 }

@@ -33,10 +33,23 @@
     "Explanation": {
       "type": "richtext"
     },
-    "mcq_level": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::mcq-level.mcq-level"
+    "Hardness_level": {
+      "type": "enumeration",
+      "enum": [
+        "Easier",
+        "Easy",
+        "Hard",
+        "Harder",
+        "Challenging"
+      ]
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Very short",
+        "Short",
+        "Long"
+      ]
     }
   }
 }

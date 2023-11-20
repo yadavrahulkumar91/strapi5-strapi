@@ -773,151 +773,6 @@ export interface ApiClassClass extends Schema.CollectionType {
   };
 }
 
-export interface ApiDynamicTestDynamicTest extends Schema.CollectionType {
-  collectionName: 'dynamic_tests';
-  info: {
-    singularName: 'dynamic-test';
-    pluralName: 'dynamic-tests';
-    displayName: 'Dynamic_test';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Dynamic_test: Attribute.DynamicZone<
-      [
-        'dynaiczonecategory.dynamic1displayname',
-        'dynaiczonecategory.dynamiczonedisplayname',
-        'html.b-ook-html'
-      ]
-    >;
-    Book_name: Attribute.String;
-    class: Attribute.Relation<
-      'api::dynamic-test.dynamic-test',
-      'oneToOne',
-      'api::class.class'
-    >;
-    Cover_picture: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::dynamic-test.dynamic-test',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::dynamic-test.dynamic-test',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiLessonLesson extends Schema.CollectionType {
-  collectionName: 'lessons';
-  info: {
-    singularName: 'lesson';
-    pluralName: 'lessons';
-    displayName: 'Book1';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Book_name: Attribute.String;
-    Description: Attribute.RichText;
-    MCQ: Attribute.Component<'book.mcq', true>;
-    Component11: Attribute.Component<'component.component1', true>;
-    dynamiccomponent: Attribute.DynamicZone<
-      [
-        'component.component1',
-        'book.mcq',
-        'dynaiczonecategory.dynamic1displayname'
-      ]
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::lesson.lesson',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::lesson.lesson',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiMcqLevelMcqLevel extends Schema.CollectionType {
-  collectionName: 'mcq_levels';
-  info: {
-    singularName: 'mcq-level';
-    pluralName: 'mcq-levels';
-    displayName: 'MCQ_level';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    level: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::mcq-level.mcq-level',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::mcq-level.mcq-level',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiQaTypeQaType extends Schema.CollectionType {
-  collectionName: 'qa_types';
-  info: {
-    singularName: 'qa-type';
-    pluralName: 'qa-types';
-    displayName: 'QA_type';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    type: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::qa-type.qa-type',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::qa-type.qa-type',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiSectionSection extends Schema.CollectionType {
   collectionName: 'sections';
   info: {
@@ -950,36 +805,6 @@ export interface ApiSectionSection extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::section.section',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiSingleTypeSingleType extends Schema.SingleType {
-  collectionName: 'single_types';
-  info: {
-    singularName: 'single-type';
-    pluralName: 'single-types';
-    displayName: 'Single_type';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.Component<'component.component1', true>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::single-type.single-type',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::single-type.single-type',
       'oneToOne',
       'admin::user'
     > &
@@ -1045,12 +870,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::book.book': ApiBookBook;
       'api::class.class': ApiClassClass;
-      'api::dynamic-test.dynamic-test': ApiDynamicTestDynamicTest;
-      'api::lesson.lesson': ApiLessonLesson;
-      'api::mcq-level.mcq-level': ApiMcqLevelMcqLevel;
-      'api::qa-type.qa-type': ApiQaTypeQaType;
       'api::section.section': ApiSectionSection;
-      'api::single-type.single-type': ApiSingleTypeSingleType;
       'api::teacher.teacher': ApiTeacherTeacher;
     }
   }
