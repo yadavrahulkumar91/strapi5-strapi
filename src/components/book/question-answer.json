@@ -29,6 +29,12 @@
         "Short",
         "Long"
       ]
+    },
+    "Asked_year": {
+      "type": "string"
+    },
+    "Marks": {
+      "type": "integer"
     }
   }
 }

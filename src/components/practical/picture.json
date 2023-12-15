@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_practical_pictures",
+  "info": {
+    "displayName": "Picture",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Picture": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Description": {
+      "type": "richtext"
+    }
+  }
+}

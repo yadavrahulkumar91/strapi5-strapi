@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "sections",
+  "collectionName": "practicals",
   "info": {
-    "singularName": "section",
-    "pluralName": "sections",
-    "displayName": "Section",
+    "singularName": "practical",
+    "pluralName": "practicals",
+    "displayName": "Practical",
     "description": ""
   },
   "options": {
@@ -12,15 +12,12 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "section_name": {
+    "Name": {
       "type": "string"
     },
-    "short_description": {
-      "type": "text"
-    },
-    "section_pic": {
+    "Cover_picture": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "allowedTypes": [
         "images",
@@ -29,14 +26,16 @@
         "audios"
       ]
     },
-    "url": {
-      "type": "string"
+    "Unit": {
+      "type": "component",
+      "repeatable": true,
+      "component": "practical.unit"
     },
-    "classes": {
+    "class": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::class.class",
-      "mappedBy": "section"
+      "inversedBy": "practicals"
     }
   }
 }

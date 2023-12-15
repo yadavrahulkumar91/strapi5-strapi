@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_practical_units",
+  "info": {
+    "displayName": "Unit"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Topic": {
+      "type": "component",
+      "repeatable": true,
+      "component": "practical.picture"
+    }
+  }
+}

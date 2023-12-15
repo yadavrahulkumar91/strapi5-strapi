@@ -4,7 +4,8 @@
   "info": {
     "singularName": "class",
     "pluralName": "classes",
-    "displayName": "Class"
+    "displayName": "Class",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -25,6 +26,18 @@
       "relation": "manyToMany",
       "target": "api::teacher.teacher",
       "mappedBy": "classes"
+    },
+    "practicals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::practical.practical",
+      "mappedBy": "class"
+    },
+    "section": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::section.section",
+      "inversedBy": "classes"
     }
   }
 }

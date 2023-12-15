@@ -50,6 +50,9 @@
         "Short",
         "Long"
       ]
+    },
+    "Asked_year": {
+      "type": "string"
     }
   }
 }

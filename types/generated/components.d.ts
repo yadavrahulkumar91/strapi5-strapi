@@ -32,6 +32,7 @@ export interface BookMcq extends Schema.Component {
       ['Easier', 'Easy', 'Hard', 'Harder', 'Challenging']
     >;
     Category: Attribute.Enumeration<['Very short', 'Short', 'Long']>;
+    Asked_year: Attribute.String;
   };
 }
 
@@ -48,6 +49,8 @@ export interface BookQuestionAnswer extends Schema.Component {
       ['Easier', 'Easy', 'Hard', 'Harder', 'Challenging']
     >;
     Category: Attribute.Enumeration<['Very short', 'Short', 'Long']>;
+    Asked_year: Attribute.String;
+    Marks: Attribute.Integer;
   };
 }
 
@@ -62,6 +65,30 @@ export interface BookUnit extends Schema.Component {
   };
 }
 
+export interface PracticalPicture extends Schema.Component {
+  collectionName: 'components_practical_pictures';
+  info: {
+    displayName: 'Picture';
+    description: '';
+  };
+  attributes: {
+    Name: Attribute.String;
+    Picture: Attribute.Media;
+    Description: Attribute.RichText;
+  };
+}
+
+export interface PracticalUnit extends Schema.Component {
+  collectionName: 'components_practical_units';
+  info: {
+    displayName: 'Unit';
+  };
+  attributes: {
+    Name: Attribute.String;
+    Topic: Attribute.Component<'practical.picture', true>;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -69,6 +96,8 @@ declare module '@strapi/types' {
       'book.mcq': BookMcq;
       'book.question-answer': BookQuestionAnswer;
       'book.unit': BookUnit;
+      'practical.picture': PracticalPicture;
+      'practical.unit': PracticalUnit;
     }
   }
 }

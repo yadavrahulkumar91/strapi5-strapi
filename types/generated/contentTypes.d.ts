@@ -739,6 +739,7 @@ export interface ApiClassClass extends Schema.CollectionType {
     singularName: 'class';
     pluralName: 'classes';
     displayName: 'Class';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -755,6 +756,16 @@ export interface ApiClassClass extends Schema.CollectionType {
       'manyToMany',
       'api::teacher.teacher'
     >;
+    practicals: Attribute.Relation<
+      'api::class.class',
+      'oneToMany',
+      'api::practical.practical'
+    >;
+    section: Attribute.Relation<
+      'api::class.class',
+      'manyToOne',
+      'api::section.section'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -766,6 +777,67 @@ export interface ApiClassClass extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::class.class',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiJsonJson extends Schema.CollectionType {
+  collectionName: 'jsons';
+  info: {
+    singularName: 'json';
+    pluralName: 'jsons';
+    displayName: 'JSON';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    JSON: Attribute.JSON;
+    JSON_text_editor: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::json.json', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::json.json', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPracticalPractical extends Schema.CollectionType {
+  collectionName: 'practicals';
+  info: {
+    singularName: 'practical';
+    pluralName: 'practicals';
+    displayName: 'Practical';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Cover_picture: Attribute.Media;
+    Unit: Attribute.Component<'practical.unit', true>;
+    class: Attribute.Relation<
+      'api::practical.practical',
+      'manyToOne',
+      'api::class.class'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::practical.practical',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::practical.practical',
       'oneToOne',
       'admin::user'
     > &
@@ -870,6 +942,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::book.book': ApiBookBook;
       'api::class.class': ApiClassClass;
+      'api::json.json': ApiJsonJson;
+      'api::practical.practical': ApiPracticalPractical;
       'api::section.section': ApiSectionSection;
       'api::teacher.teacher': ApiTeacherTeacher;
     }
