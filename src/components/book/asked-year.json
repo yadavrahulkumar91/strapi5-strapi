@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_book_asked_years",
+  "info": {
+    "displayName": "asked_year"
+  },
+  "options": {},
+  "attributes": {
+    "Asked_year": {
+      "type": "string"
+    }
+  }
+}

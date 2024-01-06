@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_book_marks",
+  "info": {
+    "displayName": "Mark"
+  },
+  "options": {},
+  "attributes": {
+    "Mark": {
+      "type": "decimal"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jsonbooks",
+  "info": {
+    "singularName": "jsonbook",
+    "pluralName": "jsonbooks",
+    "displayName": "Jsonbook",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "book_name_id": {
+      "type": "string"
+    },
+    "book_name": {
+      "type": "string"
+    },
+    "Cover_picture": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "teachers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::teacher.teacher",
+      "inversedBy": "jsonbooks"
+    },
+    "class": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::class.class",
+      "inversedBy": "jsonbooks"
+    },
+    "unit": {
+      "type": "component",
+      "repeatable": true,
+      "component": "jsonbook.unit"
+    }
+  }
+}

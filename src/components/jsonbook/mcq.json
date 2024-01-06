@@ -1,5 +1,5 @@
 {
-  "collectionName": "components_component_mcqs",
+  "collectionName": "components_jsonbook_mcqs",
   "info": {
     "displayName": "MCQ",
     "description": ""
@@ -78,7 +78,7 @@
     "Asked_year": {
       "type": "component",
       "repeatable": true,
-      "component": "book.asked-year"
+      "component": "jsonbook.asked-year"
     }
   }
 }

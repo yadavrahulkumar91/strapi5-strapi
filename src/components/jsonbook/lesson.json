@@ -1,5 +1,5 @@
 {
-  "collectionName": "components_component_lessons",
+  "collectionName": "components_jsonbook_lessons",
   "info": {
     "displayName": "Lesson",
     "description": ""
@@ -10,21 +10,17 @@
       "type": "string"
     },
     "Lesson_content": {
-      "type": "customField",
-      "options": {
-        "preset": "toolbarBaloon"
-      },
-      "customField": "plugin::ckeditor5.CKEditor"
+      "type": "json"
     },
     "Question_answer": {
       "type": "component",
       "repeatable": true,
-      "component": "book.question-answer"
+      "component": "jsonbook.question-answer"
     },
     "MCQ": {
       "type": "component",
       "repeatable": true,
-      "component": "book.mcq"
+      "component": "jsonbook.mcq"
     },
     "video_url": {
       "type": "string"

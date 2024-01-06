@@ -15,12 +15,6 @@
     "Class_name": {
       "type": "string"
     },
-    "books": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::book.book",
-      "mappedBy": "class"
-    },
     "teachers": {
       "type": "relation",
       "relation": "manyToMany",
@@ -38,6 +32,27 @@
       "relation": "manyToOne",
       "target": "api::section.section",
       "inversedBy": "classes"
+    },
+    "onedrive_url": {
+      "type": "string"
+    },
+    "jsonbooks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::jsonbook.jsonbook",
+      "mappedBy": "class"
+    },
+    "syllabi": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::syllabus.syllabus",
+      "mappedBy": "class"
+    },
+    "books": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::book.book",
+      "mappedBy": "classes"
     }
   }
 }

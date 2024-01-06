@@ -694,15 +694,21 @@ export interface ApiBookBook extends Schema.CollectionType {
     };
   };
   attributes: {
-    Book_Name: Attribute.String &
+    book_name_id: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    class: Attribute.Relation<
+    book_name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    classes: Attribute.Relation<
       'api::book.book',
-      'manyToOne',
+      'manyToMany',
       'api::class.class'
     >;
     Cover_picture: Attribute.Media &
@@ -712,6 +718,17 @@ export interface ApiBookBook extends Schema.CollectionType {
         };
       }>;
     Unit: Attribute.Component<'book.unit', true> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    teachers: Attribute.Relation<
+      'api::book.book',
+      'manyToMany',
+      'api::teacher.teacher'
+    >;
+    book_description: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -746,11 +763,6 @@ export interface ApiClassClass extends Schema.CollectionType {
   };
   attributes: {
     Class_name: Attribute.String;
-    books: Attribute.Relation<
-      'api::class.class',
-      'oneToMany',
-      'api::book.book'
-    >;
     teachers: Attribute.Relation<
       'api::class.class',
       'manyToMany',
@@ -765,6 +777,22 @@ export interface ApiClassClass extends Schema.CollectionType {
       'api::class.class',
       'manyToOne',
       'api::section.section'
+    >;
+    onedrive_url: Attribute.String;
+    jsonbooks: Attribute.Relation<
+      'api::class.class',
+      'oneToMany',
+      'api::jsonbook.jsonbook'
+    >;
+    syllabi: Attribute.Relation<
+      'api::class.class',
+      'oneToMany',
+      'api::syllabus.syllabus'
+    >;
+    books: Attribute.Relation<
+      'api::class.class',
+      'manyToMany',
+      'api::book.book'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -784,25 +812,46 @@ export interface ApiClassClass extends Schema.CollectionType {
   };
 }
 
-export interface ApiJsonJson extends Schema.CollectionType {
-  collectionName: 'jsons';
+export interface ApiJsonbookJsonbook extends Schema.CollectionType {
+  collectionName: 'jsonbooks';
   info: {
-    singularName: 'json';
-    pluralName: 'jsons';
-    displayName: 'JSON';
+    singularName: 'jsonbook';
+    pluralName: 'jsonbooks';
+    displayName: 'Jsonbook';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    JSON: Attribute.JSON;
-    JSON_text_editor: Attribute.Blocks;
+    book_name_id: Attribute.String;
+    book_name: Attribute.String;
+    Cover_picture: Attribute.Media;
+    teachers: Attribute.Relation<
+      'api::jsonbook.jsonbook',
+      'manyToMany',
+      'api::teacher.teacher'
+    >;
+    class: Attribute.Relation<
+      'api::jsonbook.jsonbook',
+      'manyToOne',
+      'api::class.class'
+    >;
+    unit: Attribute.Component<'jsonbook.unit', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::json.json', 'oneToOne', 'admin::user'> &
+    createdBy: Attribute.Relation<
+      'api::jsonbook.jsonbook',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
-    updatedBy: Attribute.Relation<'api::json.json', 'oneToOne', 'admin::user'> &
+    updatedBy: Attribute.Relation<
+      'api::jsonbook.jsonbook',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -824,7 +873,7 @@ export interface ApiPracticalPractical extends Schema.CollectionType {
     Unit: Attribute.Component<'practical.unit', true>;
     class: Attribute.Relation<
       'api::practical.practical',
-      'manyToOne',
+      'manyToMany',
       'api::class.class'
     >;
     createdAt: Attribute.DateTime;
@@ -884,6 +933,109 @@ export interface ApiSectionSection extends Schema.CollectionType {
   };
 }
 
+export interface ApiSubjectSubject extends Schema.CollectionType {
+  collectionName: 'subjects';
+  info: {
+    singularName: 'subject';
+    pluralName: 'subjects';
+    displayName: 'Subject';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    ckname: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbarBaloon';
+        }
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::subject.subject',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::subject.subject',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSyllabusSyllabus extends Schema.CollectionType {
+  collectionName: 'syllabi';
+  info: {
+    singularName: 'syllabus';
+    pluralName: 'syllabi';
+    displayName: 'Syllabus';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Subject: Attribute.String;
+    Subject_code: Attribute.String;
+    class: Attribute.Relation<
+      'api::syllabus.syllabus',
+      'manyToMany',
+      'api::class.class'
+    >;
+    Course_objectives: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbarBaloon';
+        }
+      >;
+    Evaluation_scheme: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbarBaloon';
+        }
+      >;
+    Tutorials: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbarBaloon';
+        }
+      >;
+    Reference: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbarBaloon';
+        }
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::syllabus.syllabus',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::syllabus.syllabus',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTeacherTeacher extends Schema.CollectionType {
   collectionName: 'teachers';
   info: {
@@ -906,6 +1058,22 @@ export interface ApiTeacherTeacher extends Schema.CollectionType {
       'manyToMany',
       'api::class.class'
     >;
+    Qualification: Attribute.String;
+    books: Attribute.Relation<
+      'api::teacher.teacher',
+      'manyToMany',
+      'api::book.book'
+    >;
+    teacher_types: Attribute.Relation<
+      'api::teacher.teacher',
+      'manyToMany',
+      'api::teacher-type.teacher-type'
+    >;
+    jsonbooks: Attribute.Relation<
+      'api::teacher.teacher',
+      'manyToMany',
+      'api::jsonbook.jsonbook'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -917,6 +1085,41 @@ export interface ApiTeacherTeacher extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::teacher.teacher',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiTeacherTypeTeacherType extends Schema.CollectionType {
+  collectionName: 'teacher_types';
+  info: {
+    singularName: 'teacher-type';
+    pluralName: 'teacher-types';
+    displayName: 'Teacher type';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Teacher_type: Attribute.String;
+    teachers: Attribute.Relation<
+      'api::teacher-type.teacher-type',
+      'manyToMany',
+      'api::teacher.teacher'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::teacher-type.teacher-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::teacher-type.teacher-type',
       'oneToOne',
       'admin::user'
     > &
@@ -942,10 +1145,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::book.book': ApiBookBook;
       'api::class.class': ApiClassClass;
-      'api::json.json': ApiJsonJson;
+      'api::jsonbook.jsonbook': ApiJsonbookJsonbook;
       'api::practical.practical': ApiPracticalPractical;
       'api::section.section': ApiSectionSection;
+      'api::subject.subject': ApiSubjectSubject;
+      'api::syllabus.syllabus': ApiSyllabusSyllabus;
       'api::teacher.teacher': ApiTeacherTeacher;
+      'api::teacher-type.teacher-type': ApiTeacherTypeTeacherType;
     }
   }
 }

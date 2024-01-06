@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "syllabi",
+  "info": {
+    "singularName": "syllabus",
+    "pluralName": "syllabi",
+    "displayName": "Syllabus",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Subject": {
+      "type": "string"
+    },
+    "Subject_code": {
+      "type": "string"
+    },
+    "class": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::class.class",
+      "inversedBy": "syllabi"
+    },
+    "Course_objectives": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "Evaluation_scheme": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "Tutorials": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "Reference": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}

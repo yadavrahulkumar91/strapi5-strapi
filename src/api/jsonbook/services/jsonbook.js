@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * json service
+ * jsonbook service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::json.json');
+module.exports = createCoreService('api::jsonbook.jsonbook');

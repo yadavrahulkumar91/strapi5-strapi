@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * json router
+ * subject router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::json.json');
+module.exports = createCoreRouter('api::subject.subject');

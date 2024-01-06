@@ -37,6 +37,27 @@
       "relation": "manyToMany",
       "target": "api::class.class",
       "inversedBy": "teachers"
+    },
+    "Qualification": {
+      "type": "string"
+    },
+    "books": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::book.book",
+      "inversedBy": "teachers"
+    },
+    "teacher_types": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::teacher-type.teacher-type",
+      "inversedBy": "teachers"
+    },
+    "jsonbooks": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::jsonbook.jsonbook",
+      "mappedBy": "teachers"
     }
   }
 }

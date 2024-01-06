@@ -33,7 +33,7 @@
     },
     "class": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::class.class",
       "inversedBy": "practicals"
     }

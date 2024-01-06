@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * json controller
+ * jsonbook controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::json.json');
+module.exports = createCoreController('api::jsonbook.jsonbook');

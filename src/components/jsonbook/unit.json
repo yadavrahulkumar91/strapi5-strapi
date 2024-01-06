@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_jsonbook_units",
+  "info": {
+    "displayName": "Unit"
+  },
+  "options": {},
+  "attributes": {
+    "Unit_name": {
+      "type": "string"
+    },
+    "Lesson": {
+      "displayName": "Lesson",
+      "type": "component",
+      "repeatable": true,
+      "component": "jsonbook.lesson"
+    }
+  }
+}

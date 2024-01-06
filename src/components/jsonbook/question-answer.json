@@ -1,5 +1,5 @@
 {
-  "collectionName": "components_book_question_answers",
+  "collectionName": "components_jsonbook_question_answers",
   "info": {
     "displayName": "Question_answer",
     "description": ""
@@ -39,12 +39,12 @@
     "Asked_year": {
       "type": "component",
       "repeatable": true,
-      "component": "book.asked-year"
+      "component": "jsonbook.asked-year"
     },
     "Marks": {
       "type": "component",
       "repeatable": true,
-      "component": "book.mark"
+      "component": "jsonbook.mark"
     }
   }
 }

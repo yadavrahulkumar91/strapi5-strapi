@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "Book_Name": {
+    "book_name_id": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -24,9 +24,17 @@
       },
       "type": "string"
     },
-    "class": {
+    "book_name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "classes": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::class.class",
       "inversedBy": "books"
     },
@@ -52,6 +60,20 @@
         }
       },
       "component": "book.unit"
+    },
+    "teachers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::teacher.teacher",
+      "mappedBy": "books"
+    },
+    "book_description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
     }
   }
 }

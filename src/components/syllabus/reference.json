@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_syllabus_references",
+  "info": {
+    "displayName": "Reference"
+  },
+  "options": {},
+  "attributes": {
+    "Reference": {
+      "type": "string"
+    }
+  }
+}
