@@ -13,7 +13,7 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['http://localhost:3000', 'http://localhost:1337', 'https://proud-snowflake-92486.pktriot.net', 'https://backend.rahulkumaryadav.com.np'],
+      origin: ['http://localhost:3000', 'http://localhost:1337', 'https://proud-snowflake-92486.pktriot.net', 'https://backend.rahulkumaryadav.com.np', "https://author.rahulkumaryadav.com.np"],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       keepHeaderOnError: true,
