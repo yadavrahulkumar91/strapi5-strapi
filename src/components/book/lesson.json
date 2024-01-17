@@ -9,11 +9,13 @@
     "Lesson_name": {
       "type": "string"
     },
-    
-
-
-
-    
+    "Lesson_content": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
     "Question_answer": {
       "type": "component",
       "repeatable": true,
