@@ -6,20 +6,11 @@
   },
   "options": {},
   "attributes": {
-    "Question": {
-      "type": "customField",
-      "options": {
-        "preset": "toolbarBaloon"
-      },
-      "customField": "plugin::ckeditor5.CKEditor"
-    },
-    "Answer": {
-      "type": "customField",
-      "options": {
-        "preset": "toolbarBaloon"
-      },
-      "customField": "plugin::ckeditor5.CKEditor"
-    },
+   
+
+
+
+    
     "Hardness_level": {
       "type": "enumeration",
       "enum": [
