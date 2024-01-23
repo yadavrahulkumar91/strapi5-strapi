@@ -36,4 +36,8 @@ module.exports = ({ env }) => ({
         },
     },
     
+    'json': {
+        enabled: true,
+        resolve: './src/plugins/json'
+    },
 });

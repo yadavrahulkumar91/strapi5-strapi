@@ -10,7 +10,7 @@
       "type": "string"
     },
     "Lesson_content": {
-      "type": "text"
+      "type": "json"
     },
     "Question_answer": {
       "type": "component",
