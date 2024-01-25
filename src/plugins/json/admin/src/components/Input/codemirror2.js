@@ -1,7 +1,7 @@
 import React from 'react';
 import { Controlled as CodeMirror } from 'react-codemirror2';
-// import './codemirror.css';
-// import './material.css';
+import '@hackmd/codemirror/lib/codemirror.css';
+import '@hackmd/codemirror/theme/material.css';
 
 
 

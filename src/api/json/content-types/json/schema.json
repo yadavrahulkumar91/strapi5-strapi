@@ -15,9 +15,6 @@
     "json": {
       "type": "customField",
       "customField": "plugin::json.json"
-    },
-    "Try_json": {
-      "type": "json"
     }
   }
 }

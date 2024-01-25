@@ -6,10 +6,10 @@ module.exports = ({ strapi }) => {
   strapi.customFields.register({
     name: "json",
     plugin: "json",
-    type: "json",
+    type: "text",
     inputSize: {
       // optional
-      default: 4,
+      default: 12,
       isResizable: true,
     },
   });

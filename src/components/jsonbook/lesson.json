@@ -9,9 +9,11 @@
     "Lesson_name": {
       "type": "string"
     },
-    "Lesson_content": {
-      "type": "json"
+ 
+    "lesson_content": {
+      "type": "richtext"
     },
+
     "Question_answer": {
       "type": "component",
       "repeatable": true,
