@@ -156,7 +156,7 @@ export interface JsonbookLesson extends Schema.Component {
   };
   attributes: {
     Lesson_name: Attribute.String;
-    Lesson_content: Attribute.Text;
+    lesson_content: Attribute.Text;
     Question_answer: Attribute.Component<'jsonbook.question-answer', true>;
     MCQ: Attribute.Component<'jsonbook.mcq', true>;
     video_url: Attribute.String;
