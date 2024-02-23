@@ -17,11 +17,11 @@ const Input = React.forwardRef((props, ref) => {
 
     const { formatMessage } = useIntl();
 
-    const handleChange = (e) => {
-        onChange({
-            target: { name, type: attribute.type, value: e.currentTarget.value },
-        });
-    };
+    // const handleChange = (e) => {
+    //     onChange({
+    //         target: { name, type: attribute.type, value: e.currentTarget.value },
+    //     });
+    // };
 
     return (
         <label>
@@ -40,10 +40,10 @@ const Input = React.forwardRef((props, ref) => {
                 disabled={disabled}
                 value={value}
                 required={required}
-                onChange={handleChange}
+                // onChange={handleChange}
+                onChange={onChange
+                }
             />
-
-
         </label>
     );
 });

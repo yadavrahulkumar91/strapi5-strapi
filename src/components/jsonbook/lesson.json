@@ -11,7 +11,7 @@
     },
  
     "lesson_content": {
-      "type": "richtext"
+      "type": "text"
     },
 
     "Question_answer": {

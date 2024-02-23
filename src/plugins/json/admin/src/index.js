@@ -24,7 +24,7 @@ export default {
       components: {
         Input: async () =>
           import(
-            /* webpackChunkName: "input-component" */ "./components/Input/index.js"
+            /* webpackChunkName: "input-component" */ "./components/Input"
             // /* webpackChunkName: "input-component" */ "./components/Input/input1.js"
             // /* webpackChunkName: "input-component" */ "./components/Input/codemirror2.js"
             // /* webpackChunkName: "input-component" */ "./components/Input/react-codemirror2.js"
