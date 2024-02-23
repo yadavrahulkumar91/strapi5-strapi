@@ -16,7 +16,7 @@
     "@strapi/plugin-i18n": "4.7.0",
     "@strapi/plugin-users-permissions": "4.7.0",
     "@strapi/provider-email-nodemailer": "^4.15.4",
-    "@strapi/strapi": "4.20.2",
+    "@strapi/strapi": "4.7.0",
     "pg": "8.8.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
