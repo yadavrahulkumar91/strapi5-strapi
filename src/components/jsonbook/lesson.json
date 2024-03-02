@@ -11,7 +11,8 @@
     },
  
     "lesson_content": {
-      "type": "text"
+      "type": "customField",
+      "customField": "plugin::json.json"
     },
 
     "Question_answer": {
