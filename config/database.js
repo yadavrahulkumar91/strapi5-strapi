@@ -4,52 +4,11 @@ module.exports = ({ env }) => {
   const client = env('DATABASE_CLIENT', '');
 
   const connections = {
-    // mysql: {
-    //   connection: {
-    //     connectionString: env('DATABASE_URL'),
-    //     host: env('DATABASE_HOST', 'localhost'),
-    //     port: env.int('DATABASE_PORT', 3306),
-    //     database: env('DATABASE_NAME', 'strapi'),
-    //     user: env('DATABASE_USERNAME', 'strapi'),
-    //     password: env('DATABASE_PASSWORD', 'strapi'),
-    //     ssl: env.bool('DATABASE_SSL', false) && {
-    //       key: env('DATABASE_SSL_KEY', undefined),
-    //       cert: env('DATABASE_SSL_CERT', undefined),
-    //       ca: env('DATABASE_SSL_CA', undefined),
-    //       capath: env('DATABASE_SSL_CAPATH', undefined),
-    //       cipher: env('DATABASE_SSL_CIPHER', undefined),
-    //       rejectUnauthorized: env.bool(
-    //         'DATABASE_SSL_REJECT_UNAUTHORIZED',
-    //         true
-    //       ),
-    //     },
-    //   },
-    //   pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
-    // },
-    // mysql2: {
-    //   connection: {
-    //     host: env('DATABASE_HOST', 'localhost'),
-    //     port: env.int('DATABASE_PORT', 3306),
-    //     database: env('DATABASE_NAME', 'strapi'),
-    //     user: env('DATABASE_USERNAME', 'strapi'),
-    //     password: env('DATABASE_PASSWORD', 'strapi'),
-    //     ssl: env.bool('DATABASE_SSL', false) && {
-    //       key: env('DATABASE_SSL_KEY', undefined),
-    //       cert: env('DATABASE_SSL_CERT', undefined),
-    //       ca: env('DATABASE_SSL_CA', undefined),
-    //       capath: env('DATABASE_SSL_CAPATH', undefined),
-    //       cipher: env('DATABASE_SSL_CIPHER', undefined),
-    //       rejectUnauthorized: env.bool(
-    //         'DATABASE_SSL_REJECT_UNAUTHORIZED',
-    //         true
-    //       ),
-    //     },
-    //   },
-    //   pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
-    // },
+    
     postgres: {
       connection: {
-        connectionString: env('DATABASE_URL'),
+        // connectionString: env('DATABASE_URL'),
+        connectionString: '',
         host: env('DATABASE_HOST', 'localhost'),
         port: env.int('DATABASE_PORT', 5432),
         database: env('DATABASE_NAME', 'strapi'),
@@ -82,50 +41,37 @@ QF5HqPS39UvHC45gc8iHI9+wrNXR72Qzx9d9sE7QfMMw4xgZaW+M+cfgHwxiA6Y2
 0VkXjeukwCtZcJeAp+tT69KxifZeFWrFZ4/eaPy7YVaJzHPCU/ChDZAB3hZ6G0nE
 BLCOqelSpnekzr6jpskCE4qGuo5tC/IhB0qxaAB1XzxNhmlSDg==
 -----END CERTIFICATE-----`,
+//           ca: `-----BEGIN CERTIFICATE-----
+// MIIEBjCCAu6gAwIBAgIJAMc0ZzaSUK51MA0GCSqGSIb3DQEBCwUAMIGPMQswCQYD
+// VQQGEwJVUzEQMA4GA1UEBwwHU2VhdHRsZTETMBEGA1UECAwKV2FzaGluZ3RvbjEi
+// MCAGA1UECgwZQW1hem9uIFdlYiBTZXJ2aWNlcywgSW5jLjETMBEGA1UECwwKQW1h
+// em9uIFJEUzEgMB4GA1UEAwwXQW1hem9uIFJEUyBSb290IDIwMTkgQ0EwHhcNMTkw
+// ODIyMTcwODUwWhcNMjQwODIyMTcwODUwWjCBjzELMAkGA1UEBhMCVVMxEDAOBgNV
+// BAcMB1NlYXR0bGUxEzARBgNVBAgMCldhc2hpbmd0b24xIjAgBgNVBAoMGUFtYXpv
+// biBXZWIgU2VydmljZXMsIEluYy4xEzARBgNVBAsMCkFtYXpvbiBSRFMxIDAeBgNV
+// BAMMF0FtYXpvbiBSRFMgUm9vdCAyMDE5IENBMIIBIjANBgkqhkiG9w0BAQEFAAOC
+// AQ8AMIIBCgKCAQEArXnF/E6/Qh+ku3hQTSKPMhQQlCpoWvnIthzX6MK3p5a0eXKZ
+// oWIjYcNNG6UwJjp4fUXl6glp53Jobn+tWNX88dNH2n8DVbppSwScVE2LpuL+94vY
+// 0EYE/XxN7svKea8YvlrqkUBKyxLxTjh+U/KrGOaHxz9v0l6ZNlDbuaZw3qIWdD/I
+// 6aNbGeRUVtpM6P+bWIoxVl/caQylQS6CEYUk+CpVyJSkopwJlzXT07tMoDL5WgX9
+// O08KVgDNz9qP/IGtAcRduRcNioH3E9v981QO1zt/Gpb2f8NqAjUUCUZzOnij6mx9
+// McZ+9cWX88CRzR0vQODWuZscgI08NvM69Fn2SQIDAQABo2MwYTAOBgNVHQ8BAf8E
+// BAMCAQYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUc19g2LzLA5j0Kxc0LjZa
+// pmD/vB8wHwYDVR0jBBgwFoAUc19g2LzLA5j0Kxc0LjZapmD/vB8wDQYJKoZIhvcN
+// AQELBQADggEBAHAG7WTmyjzPRIM85rVj+fWHsLIvqpw6DObIjMWokpliCeMINZFV
+// ynfgBKsf1ExwbvJNzYFXW6dihnguDG9VMPpi2up/ctQTN8tm9nDKOy08uNZoofMc
+// NUZxKCEkVKZv+IL4oHoeayt8egtv3ujJM6V14AstMQ6SwvwvA93EP/Ug2e4WAXHu
+// cbI1NAbUgVDqp+DRdfvZkgYKryjTWd/0+1fS8X1bBZVWzl7eirNVnHbSH2ZDpNuY
+// 0SBd8dj5F6ld3t58ydZbrTHze7JJOd8ijySAp4/kiu9UfZWuTPABzDa/DSdz9Dk/
+// zPW4CXXvhLmE02TA9/HeCw3KEHIwicNuEfw=
+// -----END CERTIFICATE-----`,
         },
         schema: env('DATABASE_SCHEMA', 'public'),
       },
-      pool: { min: env.int('DATABASE_POOL_MIN', 3), max: env.int('DATABASE_POOL_MAX', 100) },
-      // createTimeoutMillis: 3000,
-      // acquireTimeoutMillis: 30000,
-      // idleTimeoutMillis: 30000,
-      // reapIntervalMillis: 1000,
-      // createRetryIntervalMillis: 100,
-      // propagateCreateError: false,
+      // acquireConnectionTimeout: 1000000,
+      pool: { min: env.int('DATABASE_POOL_MIN', 3), max: env.int('DATABASE_POOL_MAX', 20) },
+      
     },
-    // postgres: {
-    //   connection: {
-    //     connectionString: env('DATABASE_URL'),
-    //     host: env('DATABASE_HOST', 'localhost'),
-    //     port: env.int('DATABASE_PORT', 5432),
-    //     database: env('DATABASE_NAME', 'strapi'),
-    //     user: env('DATABASE_USERNAME', 'strapi'),
-    //     password: env('DATABASE_PASSWORD', 'strapi'),
-    //     ssl: env.bool('DATABASE_SSL', false) && {
-    //       key: env('DATABASE_SSL_KEY', undefined),
-    //       cert: env('DATABASE_SSL_CERT', undefined),
-    //       ca: env('DATABASE_SSL_CA', undefined),
-    //       capath: env('DATABASE_SSL_CAPATH', undefined),
-    //       cipher: env('DATABASE_SSL_CIPHER', undefined),
-    //       rejectUnauthorized: env.bool(
-    //         'DATABASE_SSL_REJECT_UNAUTHORIZED',
-    //         false
-    //       ),
-    //     },
-    //     schema: env('DATABASE_SCHEMA', 'public'),
-    //   },
-    //   pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
-    // },
-    // sqlite: {
-    //   connection: {
-    //     filename: path.join(
-    //       __dirname,
-    //       '..',
-    //       env('DATABASE_FILENAME', '.tmp/data.db')
-    //     ),
-    //   },
-    //   useNullAsDefault: true,
-    // },
   };
 
   return {
