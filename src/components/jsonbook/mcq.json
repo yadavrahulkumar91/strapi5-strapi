@@ -6,42 +6,42 @@
   },
   "options": {},
   "attributes": {
-    "Question":{
+    "qu":{
       "type": "customField",
       "options": {
         "preset": "toolbarBaloon"
       },
       "customField": "plugin::ckeditor5.CKEditor"
     },
-    "Option_a": {
+    "a": {
       "type": "customField",
       "options": {
         "preset": "toolbarBaloon"
       },
       "customField": "plugin::ckeditor5.CKEditor"
     },
-    "Option_b": {
+    "b": {
       "type": "customField",
       "options": {
         "preset": "toolbarBaloon"
       },
       "customField": "plugin::ckeditor5.CKEditor"
     },
-    "Option_c": {
+    "c": {
       "type": "customField",
       "options": {
         "preset": "toolbarBaloon"
       },
       "customField": "plugin::ckeditor5.CKEditor"
     },
-    "Option_d": {
+    "d": {
       "type": "customField",
       "options": {
         "preset": "toolbarBaloon"
       },
       "customField": "plugin::ckeditor5.CKEditor"
     },
-    "Correct_answer": {
+    "ans": {
       "type": "enumeration",
       "enum": [
         "a",
@@ -50,7 +50,7 @@
         "d"
       ]
     },
-    "Explanation": {
+    "sol": {
       "type": "customField",
       "options": {
         "preset": "toolbarBaloon"
